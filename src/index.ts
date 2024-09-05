@@ -1,10 +1,10 @@
 // @ts-check
 
 class Vehicle {
-  status = "stopped";
-  make: string;
-  model: string;
-  wheels: number;
+  public status: 'stopped' | 'started' = "stopped";
+  public make: string;
+  public model;
+  public wheels;
 
   constructor(make: string, model: string, wheels: number) {
     this.make = make;
@@ -32,7 +32,7 @@ class MotorCycle extends Vehicle {
 }
 
 function printStatus(vehicle: Vehicle) {
-  if (vehicle.status === "running") {
+  if (vehicle.status === "started") {
     console.log("The vehicle is running.");
   } else {
     console.log("The vehicle is stopped.");
@@ -48,6 +48,7 @@ const myBuick = new Car("Buick", "Regal");
 myBuick.wheels = myBuick.wheels - 1;
 console.log(myBuick.wheels);
 console.log(myBuick.model);
+
 
 
 // --- NCycle Class
